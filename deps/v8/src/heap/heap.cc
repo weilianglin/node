@@ -324,67 +324,94 @@ void Heap::PrintShortHeapStatistics() {
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            new_space_.Size() / KB, new_space_.Available() / KB,
+           new_space_.CommittedPhysicalMemory() / KB,
            new_space_.CommittedMemory() / KB);
   PrintPID("Old pointers,       used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            old_pointer_space_->SizeOfObjects() / KB,
            old_pointer_space_->Available() / KB,
+           old_pointer_space_->CommittedPhysicalMemory() / KB,
            old_pointer_space_->CommittedMemory() / KB);
   PrintPID("Old data space,     used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            old_data_space_->SizeOfObjects() / KB,
            old_data_space_->Available() / KB,
+           old_data_space_->CommittedPhysicalMemory() / KB,
            old_data_space_->CommittedMemory() / KB);
   PrintPID("Code space,         used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            code_space_->SizeOfObjects() / KB, code_space_->Available() / KB,
+           code_space_->CommittedPhysicalMemory() / KB,
            code_space_->CommittedMemory() / KB);
   PrintPID("Map space,          used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            map_space_->SizeOfObjects() / KB, map_space_->Available() / KB,
+           map_space_->CommittedPhysicalMemory() / KB,
            map_space_->CommittedMemory() / KB);
   PrintPID("Cell space,         used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            cell_space_->SizeOfObjects() / KB, cell_space_->Available() / KB,
+           cell_space_->CommittedPhysicalMemory() / KB,
            cell_space_->CommittedMemory() / KB);
   PrintPID("PropertyCell space, used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            property_cell_space_->SizeOfObjects() / KB,
            property_cell_space_->Available() / KB,
+           property_cell_space_->CommittedPhysicalMemory() / KB,
            property_cell_space_->CommittedMemory() / KB);
   PrintPID("Large object space, used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            lo_space_->SizeOfObjects() / KB, lo_space_->Available() / KB,
+           lo_space_->CommittedPhysicalMemory() / KB,
            lo_space_->CommittedMemory() / KB);
   PrintPID("All spaces,         used: %6" V8_PTR_PREFIX
            "d KB"
            ", available: %6" V8_PTR_PREFIX
            "d KB"
+           ", physcommitted: %6" V8_PTR_PREFIX
+           "d KB"
            ", committed: %6" V8_PTR_PREFIX "d KB\n",
            this->SizeOfObjects() / KB, this->Available() / KB,
+           this->CommittedPhysicalMemory() / KB,
            this->CommittedMemory() / KB);
   PrintPID("External memory reported: %6" V8_PTR_PREFIX "d KB\n",
            static_cast<intptr_t>(amount_of_external_allocated_memory_ / KB));
