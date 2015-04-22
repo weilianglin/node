@@ -761,9 +761,6 @@
       'Release': {
         'conditions': [
           ['OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="netbsd"', {
-            'cflags!': [
-              '-Os',
-            ],
             'cflags': [
               '-fdata-sections',
               '-ffunction-sections',
@@ -778,7 +775,7 @@
               }],
               # TODO(crbug.com/272548): Avoid -O3 in NaCl
               ['nacl_target_arch=="none"', {
-                'cflags': ['-O3'],
+                'cflags': ['-Os'],
                 'cflags!': ['-O2'],
               }, {
                 'cflags': ['-O2'],

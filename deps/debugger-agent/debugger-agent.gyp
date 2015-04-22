@@ -22,7 +22,7 @@
         # GCC versions <= 4.4 do not handle the aliasing in the queue
         # implementation, so disable aliasing on these platforms
         # to avoid subtle bugs
-        'cflags': [ '-fno-strict-aliasing' ],
+        'cflags': [ '-fno-strict-aliasing', '-Os' ],
       }],
     ],
     "sources": [

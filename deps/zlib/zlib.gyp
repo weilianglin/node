@@ -62,6 +62,7 @@
             ['OS!="win"', {
               'product_name': 'chrome_zlib',
               'cflags!': [ '-ansi' ],
+              'cflags': [ '-Os' ],
               'sources!': [
                 'contrib/minizip/iowin32.c'
               ],

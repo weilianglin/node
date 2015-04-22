@@ -1113,7 +1113,7 @@
           'ENGINESDIR="/dev/null"',
           'TERMIOS',
         ],
-        'cflags': ['-Wno-missing-field-initializers'],
+        'cflags': ['-Wno-missing-field-initializers', '-Os'],
         'conditions': [
           ['OS=="mac"', {
             'defines': [
