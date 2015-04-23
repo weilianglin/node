@@ -9,7 +9,6 @@
 #include "src/bootstrapper.h"
 #include "src/codegen.h"
 #include "src/compilation-cache.h"
-#include "src/compiler/pipeline.h"
 #include "src/cpu-profiler.h"
 #include "src/debug.h"
 #include "src/deoptimizer.h"
@@ -406,20 +405,6 @@ OptimizedCompileJob::Status OptimizedCompileJob::CreateGraph() {
   }
 
   DCHECK(info()->shared_info()->has_deoptimization_support());
-
-  // Check the whitelist for TurboFan.
-  if (info()->closure()->PassesFilter(FLAG_turbo_filter) &&
-      // TODO(turbofan): Make try-catch work and remove this bailout.
-      info()->function()->dont_optimize_reason() != kTryCatchStatement &&
-      info()->function()->dont_optimize_reason() != kTryFinallyStatement &&
-      // TODO(turbofan): Make OSR work and remove this bailout.
-      !info()->is_osr()) {
-    compiler::Pipeline pipeline(info());
-    pipeline.GenerateCode();
-    if (!info()->code().is_null()) {
-      return SetLastStatus(SUCCEEDED);
-    }
-  }
 
   if (FLAG_trace_hydrogen) {
     Handle<String> name = info()->function()->debug_name();
