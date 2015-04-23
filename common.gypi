@@ -68,7 +68,9 @@
         'variables': {
           'v8_enable_handle_zapping%': 0,
         },
-        'cflags': [ '-Os', '-ffunction-sections', '-fdata-sections', '-fno-asynchronous-unwind-tables'],
+        'cflags': [ '-Os','-ffunction-sections', '-fdata-sections',
+                    '-fno-asynchronous-unwind-tables', ],
+        'ldflags': ['-Wl,--gc-sections'],
         'conditions': [
           ['target_arch=="x64"', {
             'msvs_configuration_platform': 'x64',

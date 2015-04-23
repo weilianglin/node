@@ -46,6 +46,7 @@
           '-ffunction-sections',
           '-fno-asynchronous-unwind-tables',
         ],
+        'ldflags' : ['-Wl,--gc-sections'],
         'msvs_settings': {
           'VCCLCompilerTool': {
             'target_conditions': [

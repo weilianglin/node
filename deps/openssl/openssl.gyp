@@ -1113,7 +1113,9 @@
           'ENGINESDIR="/dev/null"',
           'TERMIOS',
         ],
-        'cflags': ['-Wno-missing-field-initializers', '-Os', '-fno-asynchronous-unwind-tables',],
+        'cflags': ['-Wno-missing-field-initializers', '-Os', '-fno-asynchronous-unwind-tables',
+                   '-ffunction-sections', ],
+        'ldflags': [ '-Wl,--gc-sections', ],
         'conditions': [
           ['OS=="mac"', {
             'defines': [
