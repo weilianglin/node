@@ -12,9 +12,7 @@
       #       RuntimeLibrary MUST MATCH across the entire project
       'Debug': {
         'defines': [ 'DEBUG', '_DEBUG' ],
-        'cflags': [ '-Wall', '-Wextra', '-O0', '-g', '-ftrapv', '-fno-asynchronous-unwind-tables',
-                    '-ffunction-sections', ],
-        'ldflags': [ '-Wl,--gc-sections', '-Wl,--strip-all', ],
+        'cflags': [ '-Wall', '-Wextra', '-O0', '-g', '-ftrapv', ],
         'msvs_settings': {
           'VCCLCompilerTool': {
             'RuntimeLibrary': 1, # static debug
@@ -23,7 +21,9 @@
       },
       'Release': {
         'defines': [ 'NDEBUG' ],
-        'cflags': [ '-Wall', '-Wextra', '-Os' ],
+        'cflags': [ '-Wall', '-Wextra', '-Os', '-fno-asynchronous-unwind-tables',
+                    '-ffunction-sections',  ],
+        'ldflags': [ '-Wl,--gc-sections', '-Wl,--strip-all', ],
         'msvs_settings': {
           'VCCLCompilerTool': {
             'RuntimeLibrary': 0, # static release
