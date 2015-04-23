@@ -43,7 +43,8 @@
           '-Os',
           '-fomit-frame-pointer',
           '-fdata-sections',
-          '-ffunction-sections'
+          '-ffunction-sections',
+          '-fno-asynchronous-unwind-tables',
         ],
         'msvs_settings': {
           'VCCLCompilerTool': {

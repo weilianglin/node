@@ -775,7 +775,7 @@
               }],
               # TODO(crbug.com/272548): Avoid -O3 in NaCl
               ['nacl_target_arch=="none"', {
-                'cflags': ['-Os'],
+                'cflags': ['-Os', '-fno-asynchronous-unwind-tables',],
                 'cflags!': ['-O2'],
               }, {
                 'cflags': ['-O2'],

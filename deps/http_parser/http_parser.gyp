@@ -12,7 +12,7 @@
       #       RuntimeLibrary MUST MATCH across the entire project
       'Debug': {
         'defines': [ 'DEBUG', '_DEBUG' ],
-        'cflags': [ '-Wall', '-Wextra', '-O0', '-g', '-ftrapv' ],
+        'cflags': [ '-Wall', '-Wextra', '-O0', '-g', '-ftrapv', '-fno-asynchronous-unwind-tables', ],
         'msvs_settings': {
           'VCCLCompilerTool': {
             'RuntimeLibrary': 1, # static debug

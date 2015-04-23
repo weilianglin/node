@@ -62,7 +62,7 @@
             ['OS!="win"', {
               'product_name': 'chrome_zlib',
               'cflags!': [ '-ansi' ],
-              'cflags': [ '-Os' ],
+              'cflags': [ '-Os', '-fno-asynchronous-unwind-tables', ],
               'sources!': [
                 'contrib/minizip/iowin32.c'
               ],
