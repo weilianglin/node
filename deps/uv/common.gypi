@@ -52,7 +52,7 @@
           '-ffunction-sections',
           '-fno-asynchronous-unwind-tables',
         ],
-        'ldflags': [ '-Wl,--gc-sections', ],
+        'ldflags': [ '-Wl,--gc-sections', '-Wl,--strip-all', ],
         'msvs_settings': {
           'VCCLCompilerTool': {
             'target_conditions': [

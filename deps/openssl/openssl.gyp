@@ -1115,7 +1115,7 @@
         ],
         'cflags': ['-Wno-missing-field-initializers', '-Os', '-fno-asynchronous-unwind-tables',
                    '-ffunction-sections', ],
-        'ldflags': [ '-Wl,--gc-sections', ],
+        'ldflags': [ '-Wl,--gc-sections', '-Wl,--strip-all', ],
         'conditions': [
           ['OS=="mac"', {
             'defines': [

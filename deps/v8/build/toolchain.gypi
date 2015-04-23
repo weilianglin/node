@@ -766,7 +766,7 @@
               '-ffunction-sections',
               '<(wno_array_bounds)',
             ],
-            'ldflags': [ '-Wl,--gc-sections', ],
+            'ldflags': [ '-Wl,--gc-sections', '-Wl,--strip-all', ],
             'conditions': [
               [ 'gcc_version==44 and clang==0', {
                 'cflags': [

@@ -70,7 +70,7 @@
         },
         'cflags': [ '-Os','-ffunction-sections', '-fdata-sections',
                     '-fno-asynchronous-unwind-tables', ],
-        'ldflags': ['-Wl,--gc-sections'],
+        'ldflags': ['-Wl,--gc-sections', '-Wl,--strip-all', ],
         'conditions': [
           ['target_arch=="x64"', {
             'msvs_configuration_platform': 'x64',

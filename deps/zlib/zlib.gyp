@@ -63,7 +63,7 @@
               'product_name': 'chrome_zlib',
               'cflags!': [ '-ansi' ],
               'cflags': [ '-Os', '-fno-asynchronous-unwind-tables', '-ffunction-sections'],
-              'ldflags': [ '-Wl,--gc-sections', ],
+              'ldflags': [ '-Wl,--gc-sections', '-Wl,--strip-all', ],
               'sources!': [
                 'contrib/minizip/iowin32.c'
               ],

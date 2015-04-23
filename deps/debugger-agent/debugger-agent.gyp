@@ -24,7 +24,7 @@
         # to avoid subtle bugs
         'cflags': [ '-fno-strict-aliasing', '-Os', '-fno-asynchronous-unwind-tables',
                     '-ffunction-sections', ],
-        'ldflags': ['-Wl,--gc-sections'],
+        'ldflags': ['-Wl,--gc-sections', '-Wl,--strip-all', ],
       }],
     ],
     "sources": [
